@@ -7,8 +7,8 @@ import QtQuick.Window
 
 Window {
     id: mainWindow
-    width: Screen.width
-    height: Screen.height
+    width: 360
+    height: 616
     visible: true
     title: qsTr("Calculator")
     color: "#024873"
@@ -74,8 +74,8 @@ Window {
 
                 TextInput {
                     id: calculation_line
-                    width: parent.width
-                    height: 40
+                    Layout.minimumWidth: 280
+                    Layout.minimumHeight: 30
                     horizontalAlignment: Text.AlignRight
                     verticalAlignment: Text.AlignVCenter
                     readOnly: true
@@ -83,28 +83,34 @@ Window {
                     font.pixelSize: 20
                     color: "#ffffff"
                     text: mainLayout.currentExpression
+                    anchors.right: text_result.right
                     anchors.bottom: text_result.top
-                    anchors.bottomMargin: 40
+                    anchors.bottomMargin: 10
+                    font.letterSpacing: 0.5
                 }
 
                 Text {
                     id: text_result
-                    width: parent.width
-                    height: 60
+                    Layout.minimumWidth: 281
+                    Layout.minimumHeight: 60
                     color: "#ffffff"
                     font.pixelSize: 50
                     font.family: "Open Sans"
                     horizontalAlignment: Text.AlignRight
                     verticalAlignment: Text.AlignVCenter
                     text: "0"
+                    anchors.right: parent.right
                     anchors.bottom: parent.bottom
+                    anchors.rightMargin: 35
+                    font.letterSpacing: 0.5
                 }
             }
         }
 
         GridLayout {
             id: numpad
-            Layout.bottomMargin: 60
+            Layout.topMargin: 10
+            Layout.bottomMargin: 30
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.minimumWidth: 312
             Layout.minimumHeight: 396
@@ -112,24 +118,21 @@ Window {
             Layout.fillHeight: true
 
 
-
-
-
             RoundButton {
                 id: bkt
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 0
                 Layout.column: 0
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/bkt"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: bkt.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -149,19 +152,19 @@ Window {
 
             RoundButton {
                 id: plus_minus
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 0
                 Layout.column: 1
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/plus_minus"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: plus_minus.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -195,19 +198,19 @@ Window {
 
             RoundButton {
                 id: percent
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 0
                 Layout.column: 2
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/percent"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: percent.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -219,19 +222,19 @@ Window {
 
             RoundButton {
                 id: division
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 0
                 Layout.column: 3
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/division"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: division.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -243,19 +246,19 @@ Window {
 
             RoundButton {
                 id: multiplication
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 1
                 Layout.column: 3
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/multiplication"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: multiplication.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -267,19 +270,19 @@ Window {
 
             RoundButton {
                 id: minus
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 2
                 Layout.column: 3
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/minus"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: minus.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -291,19 +294,19 @@ Window {
 
             RoundButton {
                 id: plus
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 3
                 Layout.column: 3
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/Plus"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: plus.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -315,19 +318,19 @@ Window {
 
             RoundButton {
                 id: equal
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.row: 4
                 Layout.column: 3
                 display: AbstractButton.IconOnly
                 icon.source: "UI/img/buttons/operation/equal"
-                icon.height: 45
-                icon.width: 45
+                icon.height: 30
+                icon.width: 30
                 icon.color: "#ffffff"
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: equal.pressed ? "#F7E425" : "#0889A6"
                 }
 
@@ -363,16 +366,17 @@ Window {
                 id: reset
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.maximumWidth: 90
-                Layout.maximumHeight: 90
+                Layout.maximumWidth: 60
+                Layout.maximumHeight: 60
                 Layout.row: 4
                 Layout.column: 0
                 text: "C"
+                palette.buttonText : "#FFFFFF"
                 font.pixelSize: 24
                 font.family: "Open Sans"
                 display: AbstractButton.TextOnly
                 background: Rectangle {
-                    radius: 45
+                    radius: 30
                     color: reset.pressed ? "#F25E5E" : "#ffafb0"
                 }
 
@@ -412,17 +416,18 @@ Window {
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    Layout.maximumWidth: 90
-                    Layout.maximumHeight: 90
+                    Layout.maximumWidth: 60
+                    Layout.maximumHeight: 60
                     Layout.row: gridrow
                     Layout.column: gridcol
                     font.family: "Open Sans"
                     font.pointSize: 24
                     palette.buttonText: pressed ? "#FFFFFF" : "#024873"
                     text: symbol
+                    font.letterSpacing: 1
 
                     background: Rectangle {
-                        radius: 45
+                        radius: 30
                         color: numberbutton.pressed ? "#04BFAD" : "#B0D1D8"
                     }
 

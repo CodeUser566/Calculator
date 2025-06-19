@@ -20,6 +20,9 @@ qt_add_qml_module(appCalculator_colibi
         RESOURCES UI/img/buttons/operation/bkt UI/img/buttons/operation/division UI/img/buttons/operation/equal UI/img/buttons/operation/minus UI/img/buttons/operation/multiplication UI/img/buttons/operation/percent UI/img/buttons/operation/Plus UI/img/buttons/operation/plus_minus
         QML_FILES SecretMenu.qml
         SOURCES calculatorcore.h calculatorcore.cpp
+        QML_FILES
+        QML_FILES
+        QML_FILES
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
